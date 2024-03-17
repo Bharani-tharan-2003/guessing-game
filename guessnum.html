@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="guess.css">
+<div>
+<h1>Guess the number</h1>
+<h3><input id="guessnumber">
+<button onclick="c()">Check</button></h3>
+<p id="val"> YOU ARE : Wrong / Right</p>
+<p id="score">SCORE:10</p>
+
+<script>
+    //selecting input box,paragraph
+    var guessnumber = document.getElementById("guessnumber")
+    var val=document.getElementById("val")
+    var score=document.getElementById("score")
+    var randomnumber = Math.floor(Math.random()*10)+1
+    var totalchance=10
+
+    function c()
+    {
+        var enterednumber = guessnumber.value
+        
+        if(randomnumber == enterednumber )
+        { 
+            val.textContent = "RIGHT"
+            alert("YOU WON...")
+            
+        }
+
+        
+        else { 
+            totalchance=totalchance-1
+            score.textContent="CHANCE: "+totalchance
+            val.textContent="WRONG"
+        }
+        
+
+    }
+</script>
+</div>
+
+
+
